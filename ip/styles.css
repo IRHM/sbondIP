@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.myInfo{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column; /* Will auto set order */
+}
+
+span{
+  font-family: sans-serif;
+  font-size: 25px;
+}
+
+.myPublicIP{
+  border-bottom: 2px solid black;
+  font-size: 50px;
+}
