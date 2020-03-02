@@ -1,2 +1,4 @@
 # sbondIP
-Show your IP
+Get your IP.
+
+Live version: (myip.sbond.co)[https://myip.sbond.co/]
