@@ -37,16 +37,19 @@
   //    API..: https://github.com/maxmind/GeoIP2-php/releases
   //
 
-  if($publicIP == "192.168.0.1" || $publicIP == "::1"){
-	// If checking from localhost use external service
+  if($publicIP == "192.168.0.1" || $publicIP == "127.0.0.1" || $publicIP == "::1"){
+		// If checking from localhost use external service
     $publicIP = file_get_contents('https://api.ipify.org');
   }
   
-  $reader = new Reader('geoip/GeoLite2-City.mmdb');
-  $record = $reader->city($publicIP);
-  
-  $countryCode = $record->country->isoCode; // 2 letter country code
-  $countryName = $record->country->name; // Full country name
+	try {
+		$reader = new Reader('geoip/GeoLite2-City.mmdb');
+		$record = $reader->city($publicIP);
+		
+		$countryCode = $record->country->isoCode; // 2 letter country code
+		$countryName = $record->country->name; // Full country name
+	}
+	catch(Exception $ex) {}
 ?>
 
 <!DOCTYPE html>
