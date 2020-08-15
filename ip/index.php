@@ -57,7 +57,7 @@
   <head>
     <meta charset="utf-8">
     <title>myip</title>
-    <link rel="shortcut icon" href="https://ul.sbond.co/i/ico/hive.ico" />
+    <link rel="shortcut icon" href="https://ul.sbond.co/i/hive/Hiv2.png" />
     <link rel="stylesheet" href="styles.css?v=1">
   </head>
   <body>
