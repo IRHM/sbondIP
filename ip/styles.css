@@ -1,24 +1,55 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.myInfo{
+body.dark {
+  color: #A8A7AA !important;
+  background-color: #17161B !important;
+}
+
+body.dark .myPublicIP {
+  border-color: #A8A7AA !important;
+}
+
+body.dark #themeSwitch {
+  background-color: #fff;
+  box-shadow: 0 0 4px #fff;
+}
+
+#themeSwitch {
+  position: absolute;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  margin: 10px 20px;
+  background-color: #A8A7AA;
+  box-shadow: 0 0 4px #A8A7AA;
+  border-radius: 50%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.myInfo {
   height: 100%;
   width: 100%;
   display: flex;
   position: fixed;
   align-items: center;
   justify-content: center;
-  flex-flow: column; /* Will auto set order */
+  flex-flow: column;
 }
 
-span{
+span {
   font-family: sans-serif;
   font-size: 25px;
 }
 
-.myPublicIP{
+.myPublicIP {
+  margin: 10px;
   border-bottom: 2px solid black;
   font-size: 50px;
 }

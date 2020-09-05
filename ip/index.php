@@ -16,8 +16,6 @@
   $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
   $remote  = $_SERVER['REMOTE_ADDR'];
 
-  // echo $remote;
-
   if(filter_var($client, FILTER_VALIDATE_IP)){
     $publicIP = $client;
   }
@@ -29,7 +27,6 @@
   }
 
   $ua = $_SERVER['HTTP_USER_AGENT'];
-  //$isp = gethostbyaddr($_SERVER['REMOTE_ADDR']);
 
   //
   //    Geo IP
@@ -56,15 +53,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>myip</title>
     <link rel="shortcut icon" href="https://ul.sbond.co/i/hive/Hiv2.png" />
     <link rel="stylesheet" href="styles.css?v=1">
+    <title>My IP</title>
   </head>
-  <body>
+  <body class="">
+    <span id="themeSwitch"></span>
+
     <div class="myInfo">
       <span class="myCountry" title="Country Associated With IP"><?php if(isset($countryName)){echo $countryName;} ?></span>
-      <br>
       <span class="myPublicIP" title="Your Public IP"><?php echo $publicIP; ?></span>
     </div>
+
+    <script type="application/javascript" src="main.js"></script>
   </body>
 </html>
