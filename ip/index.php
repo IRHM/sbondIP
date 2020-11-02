@@ -7,7 +7,7 @@
   //    Get Real IP
   //
 
-  if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])){
+  if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
     $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
     $_SERVER['HTTP_CLIENT_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
   }
@@ -16,13 +16,13 @@
   $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
   $remote  = $_SERVER['REMOTE_ADDR'];
 
-  if(filter_var($client, FILTER_VALIDATE_IP)){
+  if (filter_var($client, FILTER_VALIDATE_IP)) {
     $publicIP = $client;
   }
-  elseif(filter_var($forward, FILTER_VALIDATE_IP)){
+  elseif (filter_var($forward, FILTER_VALIDATE_IP)) {
     $publicIP = $forward;
   }
-  else{
+  else {
     $publicIP = $remote;
   }
 
@@ -53,9 +53,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="https://ul.sbond.co/i/hive/Hiv2.png" />
+    <link rel="shortcut icon" href="logo.svg" />
     <link rel="stylesheet" href="styles.css?v=1">
     <title>My IP</title>
+    <script type="application/javascript" src="main.js" defer></script>
   </head>
   <body class="">
     <span id="themeSwitch"></span>
@@ -64,7 +65,5 @@
       <span class="myCountry" title="Country Associated With IP"><?php if(isset($countryName)){echo $countryName;} ?></span>
       <span class="myPublicIP" title="Your Public IP"><?php echo $publicIP; ?></span>
     </div>
-
-    <script type="application/javascript" src="main.js"></script>
   </body>
 </html>
